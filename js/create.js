@@ -2,9 +2,6 @@ const SERVER_URL = "http://localhost:3050";
 Vue.use(Toasted);
 new Vue({
     el: "#app",
-    components: {
-        vuejsDatepicker
-    },
     data: () => ({
         cliente: {
             nombre: "",
@@ -43,6 +40,7 @@ new Vue({
                 });
             }
             const url = SERVER_URL + "/creacliente";
+
             const res =await axios.post(url, {
                 nombre: this.cliente.nombre,
                 apellido: this.cliente.apellido,
